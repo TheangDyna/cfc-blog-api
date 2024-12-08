@@ -1,34 +1,53 @@
+// Import Express
 import express from "express";
-
 const app = express();
 
-// blog list
+// Define a route
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 const blogs = [
   {
-    id: "0001",
-    tilte: "first blog",
-    author: "mr. a",
-    cover: "image/123",
+    id: "001",
+    title: "My blogs",
   },
   {
-    id: "0002",
-    tilte: "first blog",
-    author: "mr. a",
-    cover: "image/123",
+    id: "002",
+    title: "My blogs 02",
   },
   {
-    id: "0003",
-    tilte: "first blog",
-    author: "mr. a",
-    cover: "image/123",
+    id: "003",
+    title: "My blogs 03",
   },
 ];
 
 app.get("/blogs", (req, res) => {
-  res.json({ blogs });
+  res.json({
+    status: "success",
+    result: blogs.length,
+    blogs,
+  });
 });
 
-app.listen(4000, () =>
-  console.log("Server start on port: http://localhost:4000")
-);
+// handle undefind route
+app.get("*", (req, res) => {
+  res.send(
+    `<div
+      style="
+        margin: auto;
+        width: max-content;
+        textAlign: center;
+        color: #ff6b6b;
+      "
+    >
+      <h1>This ${req.url} route is not defined 🚧</h1>
+    </div>`
+  );
+});
+
+// Start the server
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
