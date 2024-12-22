@@ -1,0 +1,142 @@
+[
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Technology",
+    "author": "John Doe",
+    "title": "The Future of AI",
+    "description": "Exploring the advancements in artificial intelligence."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Travel",
+    "author": "Jane Smith",
+    "title": "Top 10 Travel Destinations",
+    "description": "Discover the most amazing places to visit this year."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Lifestyle",
+    "author": "Emily Johnson",
+    "title": "Minimalism for a Better Life",
+    "description": "Learn how to embrace minimalism in your daily life."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Finance",
+    "author": "Robert Brown",
+    "title": "Investing for Beginners",
+    "description": "A guide to getting started with investing."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Education",
+    "author": "Michael Green",
+    "title": "Mastering Online Learning",
+    "description": "Tips for excelling in online courses."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Technology",
+    "author": "Laura White",
+    "title": "The Rise of Quantum Computing",
+    "description": "Understanding the basics of quantum computers."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Travel",
+    "author": "Sophia Martinez",
+    "title": "Exploring Hidden Gems",
+    "description": "Unveiling lesser-known travel destinations."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Lifestyle",
+    "author": "William Taylor",
+    "title": "The Power of Mindfulness",
+    "description": "Improving your mental health with mindfulness."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Finance",
+    "author": "Olivia Moore",
+    "title": "Saving Money Made Easy",
+    "description": "Practical tips for budgeting and saving money."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Education",
+    "author": "James Wilson",
+    "title": "The Importance of STEM",
+    "description": "Why STEM education matters for the future."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Technology",
+    "author": "Sophia Davis",
+    "title": "Blockchain Beyond Bitcoin",
+    "description": "Exploring the potential of blockchain technology."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Travel",
+    "author": "Benjamin Garcia",
+    "title": "Backpacking Europe",
+    "description": "Tips for an unforgettable backpacking adventure."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Lifestyle",
+    "author": "Charlotte Anderson",
+    "title": "Home Gardening Tips",
+    "description": "Growing your own food made simple."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Finance",
+    "author": "Lucas Lee",
+    "title": "Understanding Cryptocurrency",
+    "description": "A beginner's guide to cryptocurrency."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Education",
+    "author": "Amelia Walker",
+    "title": "The Future of Online Education",
+    "description": "How e-learning is transforming education."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Technology",
+    "author": "Alexander Young",
+    "title": "Cybersecurity Essentials",
+    "description": "Protecting your digital life."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Travel",
+    "author": "Isabella Hall",
+    "title": "Solo Travel Tips",
+    "description": "How to travel solo with confidence."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Lifestyle",
+    "author": "Henry Scott",
+    "title": "Decluttering Your Home",
+    "description": "Achieving a minimalist lifestyle."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Finance",
+    "author": "Ella Adams",
+    "title": "Retirement Planning 101",
+    "description": "Preparing for a secure financial future."
+  },
+  {
+    "cover": "https://via.placeholder.com/150",
+    "category": "Education",
+    "author": "Lucas Hernandez",
+    "title": "Learning a New Language",
+    "description": "Strategies for mastering a new language."
+  }
+]
