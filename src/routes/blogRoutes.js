@@ -1,9 +1,19 @@
 import express from "express";
-import { getAllBlogs, getBlogByID } from "../controllers/blogController.js";
+import {
+  getAllBlogs,
+  getBlogByID,
+  createBlog,
+  updateBlog,
+  deleteBlog,
+} from "../controllers/blogController.js";
 const router = express.Router();
 
-router.route("/").get(getAllBlogs);
+// http://localhost:4000/api/v1/blogs => get all, create
 
-router.route("/:id").get(getBlogByID);
+router.route("/").get(getAllBlogs).post(createBlog);
+
+// http://localhost:4000/api/v1/blogs/id => get by id, update, delete
+
+router.route("/:id").get(getBlogByID).put(updateBlog).delete(deleteBlog);
 
 export const blogRoutes = router;

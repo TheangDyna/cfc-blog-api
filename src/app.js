@@ -7,6 +7,9 @@ loadEnv();
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // Connect to DB
 connectDB();
 
