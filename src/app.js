@@ -2,6 +2,7 @@ import { config as loadEnv } from "dotenv";
 import express from "express";
 import connectDB from "./configs/db.js";
 import { blogRoutes } from "./routes/blogRoutes.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 loadEnv();
 
@@ -13,7 +14,10 @@ app.use(express.json());
 // Connect to DB
 connectDB();
 
-// routes
+// Routes
 app.use("/api/v1/blogs", blogRoutes);
+
+// Error handling
+app.use(errorHandler);
 
 export default app;

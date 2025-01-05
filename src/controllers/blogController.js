@@ -1,111 +1,78 @@
 import {
-  getAll,
-  getByID,
-  create,
-  update,
-  deleteItem,
+  createBlog,
+  deleteBlog,
+  getAllBlogs,
+  getBlogById,
+  updateBlog,
 } from "../services/blogService.js";
+import { AppError } from "../utils/appError.js";
 
-export const getAllBlogs = async (req, res) => {
+export const getAllBlogsHandler = async (req, res, next) => {
   try {
-    const blogs = await getAll();
+    const blogs = await getAllBlogs(req.query);
     res.status(200).json({
       status: "success",
       results: blogs.length,
       data: blogs,
     });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(error);
   }
 };
 
-export const getBlogByID = async (req, res) => {
+export const getBlogByIdHandler = async (req, res, next) => {
   try {
-    const blog = await getByID(req.params.id);
+    const blog = await getBlogById(req.params.id);
 
-    if (!blog) {
-      return res.status(404).json({
-        status: "fail",
-        message: "Document not found",
-      });
-    }
+    // respond with custom class error
+    if (!blog) throw new AppError("Document not found", 404);
 
     res.status(200).json({
       status: "success",
       data: blog,
     });
   } catch (error) {
-    if (error.name === "CastError" && error.kind === "ObjectId") {
-      return res.status(400).json({
-        status: "fail",
-        message: "Invalid ID format",
-      });
-    }
-
-    res.status(500).json({ message: error.message });
+    // Pass unexpected errors to the global error handler
+    next(error);
   }
 };
 
-export const createBlog = async (req, res) => {
+export const createBlogHandler = async (req, res, next) => {
   try {
-    const newBlog = await create(req.body);
+    const createdBlog = await createBlog(req.body);
 
     res.status(201).json({
       status: "success",
-      data: newBlog,
+      data: createdBlog,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-export const updateBlog = async (req, res) => {
+export const updateBlogHandler = async (req, res, next) => {
   try {
-    const updateBlog = await update(req.params.id, req.body);
+    const updatedBlog = await updateBlog(req.params.id, req.body);
 
-    if (!updateBlog) {
-      return res.status(404).json({
-        status: "fail",
-        message: "Document not found",
-      });
-    }
+    if (!updatedBlog) throw new AppError("Document not found", 404);
 
     res.status(200).json({
       status: "success",
-      data: updateBlog,
+      data: updatedBlog,
     });
   } catch (error) {
-    if (error.name === "CastError" && error.kind === "ObjectId") {
-      return res.status(400).json({
-        status: "fail",
-        message: "Invalid ID format",
-      });
-    }
-
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
-export const deleteBlog = async (req, res) => {
+export const deleteBlogHandler = async (req, res, next) => {
   try {
-    const deleteBlog = await deleteItem(req.params.id);
+    const deletedBlog = await deleteBlog(req.params.id);
 
-    if (!deleteBlog) {
-      return res.status(404).json({
-        status: "fail",
-        message: "Document not found",
-      });
-    }
+    if (!deletedBlog) throw new AppError("Document not found", 404);
 
     res.status(204);
   } catch (error) {
-    if (error.name === "CastError" && error.kind === "ObjectId") {
-      return res.status(400).json({
-        status: "fail",
-        message: "Invalid ID format",
-      });
-    }
-
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
