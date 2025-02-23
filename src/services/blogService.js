@@ -24,7 +24,8 @@ export const createBlog = async (body) => {
 
 export const updateBlog = async (id, body) => {
   const updateBlog = await Blog.findByIdAndUpdate(id, body, {
-    new: true,
+    new: true, // Return the modified document rather than the original
+    runValidators: true, // Validate the updates against the schema
   });
   return updateBlog;
 };

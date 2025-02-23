@@ -71,7 +71,7 @@ export const deleteBlogHandler = async (req, res, next) => {
 
     if (!deletedBlog) throw new AppError("Document not found", 404);
 
-    res.status(204);
+    res.status(204).json();
   } catch (error) {
     next(error);
   }
